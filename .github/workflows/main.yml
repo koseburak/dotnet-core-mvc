@@ -19,7 +19,11 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - shell: bash pwd && ls -la
+      - name: configure
+        run: |
+          pwd
+          ls -la
+        
       - name: Build and Push Docker image
         uses: docker/build-push-action@v1
         with:
